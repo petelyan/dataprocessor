@@ -16,6 +16,13 @@ object ProcessData {
     reader.readNext().map(_.toDouble)
   }
 
+  def mapStringLength(inputRDD: RDD[String]): RDD[(String,Int)] = {
+   val totalLengths =  inputRDD.flatMap(lines => lines.split(","))
+      .map(word => (word,word.length()))
+      .reduceByKey(_ + _)
+    totalLengths
+  }
+
   def handleInput(invalidLineCounter: Accumulator[Int],inFile: RDD[String]): RDD[Double] = {
     val numericData = inFile.flatMap(line => {
       try{
