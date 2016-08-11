@@ -33,16 +33,8 @@ object ProcessData {
           None
       }
     })
-
-//    println("****numericData count: " + numericData.count())
     numericData.map(row => row.sum)
-/*    val numericData = inFile.map(line => parseLine(line))
 
-    val returnData = numericData.map(row => row.sum)
-
-    println("****numericData count: " + numericData.count())
-
-    returnData*/
 
   }
 
