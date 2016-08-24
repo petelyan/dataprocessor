@@ -9,6 +9,13 @@ scalaVersion := "2.10.5"
 
 ivyScala := ivyScala.value map{_.copy(overrideScalaVersion = true)}
 
+
+resolvers += "Typesafe Repository" at "https://repo.typesafe.com/typesafe/releases"
+
+resolvers += "Sonatype OSS Maven Repository" at "https://oss.sonatype.org/content/repositories/public"
+
+resolvers += "Maven Central" at "http://central.maven.org/maven2/"
+
 libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "2.2.6"
   ,"org.scala-lang" % "scala-library" % "2.10.5"
