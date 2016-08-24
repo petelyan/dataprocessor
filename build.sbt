@@ -17,5 +17,5 @@ libraryDependencies ++= Seq(
 )
 
 
-publishTo := Some(Resolver.file("file",new File(Path.userHome.absolutePath + "/.ivy2/cache/")))
+publishTo := Some(Resolver.file("file",new File(Path.userHome.absolutePath + "/.ivy2/cache")))
     
