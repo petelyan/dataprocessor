@@ -4,14 +4,14 @@ pipeline{
         stage('Build'){
             steps {
                 echo 'Building project'
-                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginsBuilder$SbtInstallation'}/bin/sbt compile"
+                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt compile"
             }
         }
         stage('Unit Test'){
             steps{
                 echo 'Running unit tests'
-                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginsBuilder$SbtInstallation'}/bin/sbt test"
-                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginsBuilder$SbtInstallation'}/bin/sbt scalastyle"
+                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt test"
+                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/bin/sbt scalastyle"
             }
         }
 
