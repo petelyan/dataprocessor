@@ -1,21 +1,21 @@
 pipeline{
     agent any
-    stage('Build'){
-        steps {
-            echo 'Building project'
-            sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginsBuilder$SbtInstallation'}/bin/sbt compile"
+    stages{
+        stage('Build'){
+            steps {
+                echo 'Building project'
+                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginsBuilder$SbtInstallation'}/bin/sbt compile"
+            }
         }
-    }
-    stage('Unit Test'){
-        steps{
-            echo 'Running unit tests'
-            sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginsBuilder$SbtInstallation'}/bin/sbt test"
-            sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginsBuilder$SbtInstallation'}/bin/sbt scalastyle"
+        stage('Unit Test'){
+            steps{
+                echo 'Running unit tests'
+                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginsBuilder$SbtInstallation'}/bin/sbt test"
+                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginsBuilder$SbtInstallation'}/bin/sbt scalastyle"
+            }
         }
-    }
-/*    stage{
-        echo 'Packaging application'
-        //sbt package"
 
-    }*/
+    }
+
+
 }
