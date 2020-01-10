@@ -10,7 +10,7 @@ pipeline{
         stage('Build'){
             steps {
                 echo 'Building project'
-                sh "${tool name: 'sbt', type: 'org.jvnet.hudson.plugins.SbtPluginBuilder$SbtInstallation'}/usr/bin/sbt compile"
+                sh "sbt clean compile"
             }
         }
 //        stage('Unit Test'){
