@@ -11,7 +11,6 @@ pipeline{
             steps{
                 echo 'Running unit tests'
                 sh "sbt test"
-                sh "sbt scalastyle"
             }
         }
 
