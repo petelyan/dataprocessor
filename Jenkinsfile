@@ -13,6 +13,12 @@ pipeline{
                 sh "sbt test"
             }
         }
+        stage('Package'){
+            steps{
+                echo 'Packaging...'
+                sh "sbt package"
+            }
+        }
 
     }
 
